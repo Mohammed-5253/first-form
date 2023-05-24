@@ -22,8 +22,16 @@ function registerUser(event) {
   // Display submitted data on the screen
   const container = document.getElementById('my-form');
   const listItem = document.createElement('li');
-  listItem.textContent = `Name: ${name}, Phone: ${phone}`;
+  listItem.textContent = `Name: ${name}, Phone: ${phone}, city: ${city},` ;
   container.appendChild(listItem);
+
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', function() {
+    container.removeChild(listItem);
+  });
+
+  listItem.appendChild(deleteButton);
 
   // Clear input fields
   document.getElementById('name').value = '';
