@@ -1,11 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Bootstrap Example</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+<script src="index.js"></script>
+<div class="container">
+    <h2>Contact us</h2>
+    <form action="https://httpbin.org/post" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone no.:</label>
+            <input type="text" class="form-control" id="phone" placeholder="Enter your phone no" name="phone no.">
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter city" name="city">
+        </div>
+        <div class="form-group">
+            <label for="date">Call time:</label>
+            <input type="datetime-local" class="form-control" id="date" name="date">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
 </body>
 </html>
