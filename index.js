@@ -10,11 +10,21 @@ function registerUser(event) {
     console.log('Please fill in all fields');
     return;
   }
-  // Save user details to localStorage
-  localStorage.setItem('name', name);
-  localStorage.setItem('email', email);
-  localStorage.setItem('phone', phone);
-  localStorage.setItem('city', city);
+  let obj = {
+    name : name,
+    phone : phone
+  };
+  function generateUniqueId() {
+    return Date.now().toString();
+  }
+  const userId = generateUniqueId(); // You can implement your own function to generate a unique ID
+  let obj_serialized = JSON.stringify(obj);
+  localStorage.setItem('name_'+userId ,obj_serialized);
+
+  // localStorage.setItem('name', name);
+  // localStorage.setItem('email', email);
+  // localStorage.setItem('phone', phone);
+  // localStorage.setItem('city', city);
 
   console.log('User details saved to localStorage');
 
