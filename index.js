@@ -14,19 +14,16 @@ function registerUser(event) {
     name : name,
     phone : phone
   };
-  function generateUniqueId() {
-    return Date.now().toString();
-  }
-  const userId = generateUniqueId(); // You can implement your own function to generate a unique ID
   let obj_serialized = JSON.stringify(obj);
-  localStorage.setItem('name_'+userId ,obj_serialized);
-
-  // localStorage.setItem('name', name);
-  // localStorage.setItem('email', email);
-  // localStorage.setItem('phone', phone);
-  // localStorage.setItem('city', city);
+  localStorage.setItem(email ,obj_serialized);
 
   console.log('User details saved to localStorage');
+
+  // Display submitted data on the screen
+  const container = document.getElementById('my-form');
+  const listItem = document.createElement('li');
+  listItem.textContent = `Name: ${name}, Phone: ${phone}`;
+  container.appendChild(listItem);
 
   // Clear input fields
   document.getElementById('name').value = '';
