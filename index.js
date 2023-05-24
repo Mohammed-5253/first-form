@@ -10,49 +10,19 @@ function registerUser(event) {
     console.log('Please fill in all fields');
     return;
   }
+  // Save user details to localStorage
+  localStorage.setItem('name', name);
+  localStorage.setItem('email', email);
+  localStorage.setItem('phone', phone);
+  localStorage.setItem('city', city);
 
-  if (!isValidEmail(email)) {
-    console.log('Please enter a valid email address');
-    return;
-  }
+  console.log('User details saved to localStorage');
 
-  if (!isValidPhone(phone)) {
-    console.log('Please enter a valid phone number');
-    return;
-  }
-
-  console.log(name);
-  console.log(email);
-  console.log(phone);
-  console.log(city);
+  // Clear input fields
+  document.getElementById('name').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('city').value = '';
 }
-
-function isValidEmail(email) {
-  const regex = /^\S+@\S+\.\S+$/;
-  return regex.test(email);
-}
-
-function isValidPhone(phone) {
-  const regex = /^\d{10}$/;
-  return regex.test(phone);
-}
-
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
-  console.log("button has been clicked")
-});
-
-const element0 = document.querySelector('.element');
-element0.addEventListener('mouseover', () => {
-  element0.style.backgroundColor = 'blue';
-});
-
-const element = document.querySelector('.element');
-element.addEventListener('mouseout', () => {
-  element.style.backgroundColor = 'red';
-});
-
 const form = document.getElementById('my-form');
 form.addEventListener('submit', registerUser);
-
-
