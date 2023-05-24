@@ -31,7 +31,17 @@ function registerUser(event) {
     container.removeChild(listItem);
   });
 
+  const editButton = document.createElement('button');
+  editButton.textContent = 'Edit';
+  editButton.addEventListener('click', function() {
+    document.getElementById('name').value = name;
+    document.getElementById('phone').value = phone;
+    document.getElementById('city').value = city;
+
+    container.removeChild(listItem);
+  });
   listItem.appendChild(deleteButton);
+  listItem.appendChild(editButton);
 
   // Clear input fields
   document.getElementById('name').value = '';
